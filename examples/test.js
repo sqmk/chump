@@ -7,6 +7,7 @@ var chump = require('../lib/Chump');
 let client = new chump.Client(process.env.API_TOKEN);
 let user   = new chump.User(process.env.USER_ID, process.env.DEVICE_NAME);
 
+console.log(`Chump version: ${chump.version}`);
 console.log('Starting promise');
 console.log('Verifying user');
 
