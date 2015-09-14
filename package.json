@@ -1,9 +1,9 @@
 {
 	"name": "chump",
-	"version": "0.0.1",
-	"description": "This is a test",
+	"version": "0.0.2",
+	"description": "Full featured client for Pushover.net",
 	"license": "MIT",
-	"repository": "sqmk/chump",
+	"repository": "sqmk/node-chump",
 	"maintainers": [
 		"Michael Squires <sqmk@php.net>"
 	],
@@ -18,7 +18,10 @@
 		"chump",
 		"pushover",
 		"client",
-		"api"
+		"api",
+		"apple",
+		"push",
+		"notifications"
 	],
 	"dependencies": {
 		"lodash":  "3.10.0",
