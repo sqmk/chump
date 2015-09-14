@@ -1,0 +1,29 @@
+{
+	"name": "chump",
+	"version": "0.0.1",
+	"description": "This is a test",
+	"license": "MIT",
+	"repository": "sqmk/chump",
+	"maintainers": [
+		"Michael Squires <sqmk@php.net>"
+	],
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"main": "lib/Chump.js",
+	"scripts": {
+		"test": ""
+	},
+	"keywords": [
+		"chump",
+		"pushover",
+		"client",
+		"api"
+	],
+	"dependencies": {
+		"lodash":  "3.10.0",
+		"request": "2.61.0"
+	},
+	"devDependencies": {
+	}
+}
