@@ -11,7 +11,6 @@ let user   = new chump.User(config.user_id, config.device_name);
 console.log(`Chump version: ${chump.version}`);
 console.log('Starting promise');
 console.log('Verifying user');
-console.log(new chump.Priority('emergency', {'retries': 1}));
 
 client.verifyUser(user)
   .then((result) => {
@@ -26,7 +25,7 @@ client.verifyUser(user)
         'url':        'http://google.com',
         'urlTitle':   'Google dot com',
         'timestamp':  Math.round(Date.now() / 1000),
-        'priority':   new chump.Priority('low', {'retry': 30, 'expire': 66}),
+        'priority':   new chump.Priority('emergency'),
         'sound':      new chump.Sound('cashregister')
       })
     );
@@ -34,6 +33,11 @@ client.verifyUser(user)
   .then((receipt) => {
     if (receipt) {
       console.log(`Receipt: ${receipt}`);
+
+      return client.cancelEmergency(receipt)
+        .then((status) => {
+          console.log(`Cancellation: ${status}`);
+        });
     }
   })
   .then(() => {
