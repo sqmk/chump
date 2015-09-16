@@ -2,10 +2,11 @@
 
 'use strict';
 
-var chump = require('../lib/Chump');
+var chump  = require('../lib/Chump');
+var config = require('./config.json');
 
-let client = new chump.Client(process.env.API_TOKEN);
-let user   = new chump.User(process.env.USER_ID, process.env.DEVICE_NAME);
+let client = new chump.Client(config.api_token);
+let user   = new chump.User(config.user_id, config.device_name);
 
 console.log(`Chump version: ${chump.version}`);
 console.log('Starting promise');
