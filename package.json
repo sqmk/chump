@@ -2,18 +2,6 @@
 	"name": "chump",
 	"version": "0.0.4",
 	"description": "Pushover.net client for node.js",
-	"license": "MIT",
-	"repository": "sqmk/node-chump",
-	"maintainers": [
-		"Michael Squires <sqmk@php.net>"
-	],
-	"engines": {
-		"node": ">=4.0.0"
-	},
-	"main": "lib/Chump.js",
-	"scripts": {
-		"test": ""
-	},
 	"homepage": "https://github.com/sqmk/node-chump",
 	"bugs": {
 		"url": "https://github.com/sqmk/node-chump/issues"
@@ -27,6 +15,18 @@
 		"push",
 		"notifications"
 	],
+	"license": "MIT",
+	"repository": "sqmk/node-chump",
+	"maintainers": [
+		"Michael Squires <sqmk@php.net>"
+	],
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"main": "lib/Chump.js",
+	"scripts": {
+		"test": ""
+	},
 	"dependencies": {
 		"lodash":  "3.10.0",
 		"request": "2.61.0"
