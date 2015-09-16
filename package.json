@@ -1,6 +1,6 @@
 {
 	"name": "chump",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Pushover.net client for node.js",
 	"license": "MIT",
 	"repository": "sqmk/node-chump",
