@@ -6,7 +6,7 @@ var chump  = require('../lib/Chump');
 var config = require('./config.json');
 
 let client  = new chump.Client(config.api_token);
-let user    = new chump.User(config.user_id, config.device_name);
+let user    = new chump.User(config.user_id, config.user_device);
 let message = new chump.Message({
   'title':      'The roof is on fire!',
   'message':    '<b>Put it out immediately!</b>',
