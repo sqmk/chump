@@ -2,8 +2,8 @@
 
 'use strict';
 
-var chump  = require('../lib/Chump');
-var config = require('./config.json');
+let chump  = require('../lib/Chump');
+let config = require('./config.json');
 
 let client = new chump.Client(config.api_token);
 let user   = new chump.User(config.user_id, config.user_device);
