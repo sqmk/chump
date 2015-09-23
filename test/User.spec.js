@@ -11,15 +11,15 @@ describe('User', () => {
   });
 
   describe('constructor', () => {
-    it('should have default properties', () => {
-      expect(this.user).to.have.all.keys('properties');
+    it('should set default properties', () => {
+      expect(this.user).to.have.property('properties');
     });
 
-    it('should have set initial id', () => {
+    it('should set initial id', () => {
       expect(this.user.id).equal(this.id);
     });
 
-    it('should have set initial device', () => {
+    it('should set initial device', () => {
       expect(this.user.device).equal(this.device);
     });
   });
