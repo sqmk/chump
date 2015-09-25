@@ -46,14 +46,14 @@ describe('Transport', () => {
         .to.be.an.instanceof(Promise);
     });
 
-    it('should reject on a request error', () => {
+    it('should reject on request error', () => {
       requestStub.yields('general error', null, null);
 
       return expect(this.transport.sendRequest())
         .eventually.be.rejectedWith(Error);
     });
 
-    it('should reject on a request status other than 200', () => {
+    it('should reject on request status other than 200', () => {
       requestStub.yields(null, {'statusCode': 500}, null);
 
       return expect(this.transport.sendRequest())
