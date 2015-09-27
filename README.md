@@ -16,7 +16,7 @@ Chump was written for **node.js 4+**.
 
 `npm install --save chump`
 
-## Usage
+## Basic Usage
 
 It is easy to send messages via Pushover.net using Chump.
 
@@ -52,6 +52,48 @@ client.sendMessage(message)
 ```
 
 All client methods that send a command return a **Promise**.
+
+## Advanced Usage
+
+Chump supports the entire Pushover.net API. The client offers convenience methods
+that correspond to each Pushover.net endpoint.
+
+### .verifyUser
+
+### .getReceipt
+
+### .cancelEmergency
+
+### .getGroupDetails
+
+### .addUserToGroup
+
+### .removeUserFromGroup
+
+### .enableGroupUser
+
+### .disableGroupUser
+
+### .renameGroup
+
+## Track Application Limitations
+
+Pushover.net limits the number of messages emitted from its service. Chump keeps
+track of these limitations after each successful message sent. You can access app
+limitations from the following client properties:
+
+```js
+// Maximum number of messages that can be sent
+let appLimit = client.appLimit;
+
+// Number of messages remaining in time period
+let appRemaining = client.appRemaining;
+
+// Date when app remaining resets to app limit
+let appReset = client.appReset;
+
+// 
+```
 
 ## Examples
 
