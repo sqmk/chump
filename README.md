@@ -20,6 +20,8 @@ Chump was written for **node.js 4+**.
 
 It is easy to send messages via Pushover.net using Chump.
 
+### Sending Messages
+
 ```js
 let chump = require('chump');
 
@@ -31,13 +33,14 @@ let user = new chump.User('userIdHere', 'optionalUserDeviceHere');
 
 // Instantiate a message
 let message = new chump.Message({
-  'title':    'Example title',
-  'message':  'Example message',
-  'user':     user,
-  'url':      'http://example.org',
-  'urlTitle': 'Example.org',
-  'priority': new chump.Priority('low'),
-  'sound':    new chump.Sound('magic')
+  'title':      'Example title',
+  'message':    'Example message',
+  'enableHtml': false,
+  'user':       user,
+  'url':        'http://example.org',
+  'urlTitle':   'Example.org',
+  'priority':   new chump.Priority('low'),
+  'sound':      new chump.Sound('magic')
 });
 
 // Send the message, handle result within a Promise
@@ -53,6 +56,34 @@ client.sendMessage(message)
 
 All client methods that send a command return a **Promise**.
 
+### Sending Messages With Emergency Priority
+
+An emergency priority can be attached to a message. This requires that the
+message is acknowledged by the user, and can renotify the user on failure to
+acknowledge. Pushover.net can also call an optional callback URL after the user
+acknowledges the message. A message receipt is returned to the resolved Promise
+on successful delivery of emergency priority messages.
+
+```js
+let priority = new chump.Priority('emergency', {
+  'retry':    300,  // Optional: Notify user every 5 minutes (300 seconds) until acknowledged
+  'expire':   3600, // Optional: Expire the message in 1 hour (3600 seconds)
+  'callback': 'http://example.org' // Optional: Callback URL
+});
+
+let message = new chump.Message({
+  'title':    'Example emergency',
+  'message':  'Super important message',
+  'user':     user,
+  'priority': priority
+});
+
+client.sendMessage(message)
+  .then((receipt) => {
+    console.log(`Message sent. Receipt is ${receipt}`);
+  });
+```
+
 ## Advanced Usage
 
 Chump supports the entire Pushover.net API. The client offers convenience methods
@@ -60,21 +91,121 @@ that correspond to each Pushover.net endpoint.
 
 ### .verifyUser
 
+Verify that a user (and optionally, the user's device) exists on Pushover.net
+
+```js
+let user = new chump.user('userIdHere', 'optionalUserDeviceHere');
+
+// Verify the user exists
+client.verifyUser(user)
+  .then(() => {
+    console.log('User exists.');
+  })
+  .catch((reason) => {
+    console.log('User may not exist.');
+    console.log(reason.stack);
+  });
+```
+
 ### .getReceipt
+
+Additional receipt information can be retrieved from Pushover.net. Receipts are
+only returned for messages sent with an emergency priority.
+
+```js
+client.getReceipt(receipt)
+  .then((receipt) => {
+    console.log(`Receipt: ${receipt.id}`);
+    console.log(`Acknowledged: ${receipt.isAcknowledged}`);
+    console.log(`Acknowledged by: ${receipt.acknowledgedBy}`);
+    console.log(`Last delivered at: ${receipt.lastDeliveredAt}`);
+    console.log(`Is expired: ${receipt.isExpired}`);
+    console.log(`Expires at: ${receipt.expiresAt}`);
+    console.log(`Has called back: ${receipt.hasCalledBack}`);
+    console.log(`Called back at: ${receipt.calledBackAt}`);
+  });
+```
 
 ### .cancelEmergency
 
+A message with an emergency priority can be cancelled.
+
+```js
+client.cancelEmergency(receipt);
+```
+
 ### .getGroupDetails
+
+Pushover.net supports managing users within groups. Creating groups can only be
+done through Pushover.net's website. Assuming you know the group Id, you can use
+Chump to retrieve information for the group from Pushover.net.
+
+```js
+let group = new chump.Group(groupId);
+
+client.getGroupDetails(group)
+  .then((group) => {
+    console.log(`Group name: ${group.name}`);
+
+    for (let user of group.users) {
+      console.log(`User: ${user.id}, ${user.device}`);
+    }
+  });
+```
 
 ### .addUserToGroup
 
+Add a user to a known group.
+
+```js
+let user  = new chump.User(userId);
+let group = new chump.Group(groupId);
+
+client.addUserToGroup(user, group);
+```
+
 ### .removeUserFromGroup
+
+Remove a user from a known group.
+
+```js
+let user  = new chump.User(userId);
+let group = new chump.Group(groupId);
+
+client.removeUserFromGroup(user, group);
+```
 
 ### .enableGroupUser
 
+Enable a user in a known group.
+
+```js
+let user  = new chump.User(userId);
+let group = new chump.Group(groupId);
+
+client.enableGroupUser(user, group);
+```
+
 ### .disableGroupUser
 
+Disable a user in a known group.
+
+```js
+let user  = new chump.User(userId);
+let group = new chump.Group(groupId);
+
+client.disableGroupUser(user, group);
+```
+
 ### .renameGroup
+
+Rename a known group.
+
+```js
+let group = new chump.Group(groupId);
+
+client.renameGroup(group, 'New name');
+```
 
 ## Track Application Limitations
 
@@ -91,8 +222,6 @@ let appRemaining = client.appRemaining;
 
 // Date when app remaining resets to app limit
 let appReset = client.appReset;
-
-// 
 ```
 
 ## Examples
