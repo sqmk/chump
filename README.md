@@ -62,4 +62,4 @@ in this repository.
 
 This software is licensed under the MIT License. [View the license](LICENSE).
 
-Copyright © 2015 Michael K. Squires
+Copyright © 2015 [Michael K. Squires](http://sqmk.com)
