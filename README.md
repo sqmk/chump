@@ -8,9 +8,11 @@ notification service.
 
 Use Chump to send Android, iOS, watchOS, and desktop notifications.
 
+Chump makes **full use** of Pushover.net's API.
+
 ## Installation
 
-Chump was written for *Node 4+*.
+Chump was written for **node.js 4+**.
 
 `npm install --save chump`
 
@@ -46,10 +48,10 @@ client.sendMessage(message)
   .catch((reason) => {
   	console.log('An error occurred.');
     console.log(reason.stack);
-  })
+  });
 ```
 
-All client methods that send a command return a *Promise*.
+All client methods that send a command return a **Promise**.
 
 ## Examples
 
