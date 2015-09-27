@@ -89,6 +89,8 @@ client.sendMessage(message)
 Chump supports the entire Pushover.net API. The client offers convenience methods
 that correspond to each Pushover.net endpoint.
 
+As documented earlier, all client methods that send a command return a **Promise**.
+
 ### .verifyUser
 
 Verify that a user (and optionally, the user's device) exists on Pushover.net
