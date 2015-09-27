@@ -57,3 +57,9 @@ All client methods that send a command return a **Promise**.
 
 Want to see more examples? View them in the [examples](examples) directory included
 in this repository.
+
+## License
+
+This software is licensed under the MIT License. [View the license](LICENSE).
+
+Copyright © 2015 Michael K. Squires
