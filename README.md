@@ -1,4 +1,4 @@
-# Chump - Pushover.net client for node.js
+# Chump - Pushover.net client for Node.js
 
 [![NPM Version](https://badge.fury.io/js/chump.svg)](https://www.npmjs.com/package/chump)
 [![Build Status](https://api.travis-ci.org/sqmk/chump.svg?branch=master)](https://travis-ci.org/sqmk/chump)
@@ -12,7 +12,7 @@ Chump makes **full use** of Pushover.net's API.
 
 ## Installation
 
-Chump was written for **node.js 4+**.
+Chump was written for **Node.js 4+**.
 
 `npm install --save chump`
 
