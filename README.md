@@ -4,9 +4,11 @@
 [![Build Status](https://api.travis-ci.org/sqmk/chump.svg?branch=master)](https://travis-ci.org/sqmk/chump)
 
 <h2 align="center">
-<br /><br />
-![Chump](https://cdn.rawgit.com/sqmk/chump/eceac9d76c10936bb191afc87da6b7230ced0c2d/media/logo.png)
-<br /><br />
+  <br />
+  <br />
+  <img src="https://cdn.rawgit.com/sqmk/chump/eceac9d76c10936bb191afc87da6b7230ced0c2d/media/logo.png" alt="Chump" />
+  <br />
+  <br />
 </h2>
 
 Chump is a client for the popular [Pushover.net](https://pushover.net) real-time
