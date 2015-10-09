@@ -1,11 +1,7 @@
 {
   "name": "chump",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pushover.net client for Node.js",
-  "homepage": "https://github.com/sqmk/chump",
-  "bugs": {
-    "url": "https://github.com/sqmk/chump/issues"
-  },
   "keywords": [
     "pushover",
     "chump",
@@ -15,14 +11,11 @@
     "push",
     "notifications"
   ],
-  "license": "MIT",
-  "repository": "sqmk/chump",
   "maintainers": [
     "Michael Squires <sqmk@php.net>"
   ],
-  "engines": {
-    "node": ">=4.0.0"
-  },
+  "license": "MIT",
+  "repository": "sqmk/chump",
   "main": "lib/Chump.js",
   "files": [
     "lib"
