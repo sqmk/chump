@@ -1,6 +1,6 @@
 {
   "name": "chump",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Pushover.net client for Node.js",
   "keywords": [
     "pushover",
