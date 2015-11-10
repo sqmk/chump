@@ -11,6 +11,6 @@ let user    = new chump.User(config.user_id, config.user_device);
 console.log('Verifying user...');
 
 client.verifyUser(user)
-  .then((result) => {
+  .then(result => {
     console.log('User verified!');
   });

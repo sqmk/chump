@@ -12,7 +12,7 @@ let group  = new chump.Group(config.group_id);
 console.log('Getting group details...');
 
 client.getGroupDetails(group)
-  .then((group) => {
+  .then(group => {
     console.log(`Group name: ${group.name}`);
 
     for (let i of group.users) {
@@ -61,6 +61,6 @@ client.getGroupDetails(group)
       `New group name ${Math.floor(Date.now() / 1000)}`
     );
   })
-  .catch((reason) => {
-    console.log(reason.stack);
+  .catch(error => {
+    console.log(error.stack);
   });
