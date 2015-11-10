@@ -37,24 +37,24 @@ let user = new chump.User('userIdHere', 'optionalUserDeviceHere');
 
 // Instantiate a message
 let message = new chump.Message({
-  'title':      'Example title',
-  'message':    'Example message',
-  'enableHtml': false,
-  'user':       user,
-  'url':        'http://example.org',
-  'urlTitle':   'Example.org',
-  'priority':   new chump.Priority('low'),
-  'sound':      new chump.Sound('magic')
+  title:      'Example title',
+  message:    'Example message',
+  enableHtml: false,
+  user:       user,
+  url:        'http://example.org',
+  urlTitle:   'Example.org',
+  priority:   new chump.Priority('low'),
+  sound:      new chump.Sound('magic')
 });
 
 // Send the message, handle result within a Promise
 client.sendMessage(message)
   .then(() => {
-	console.log('Message sent.');
+	  console.log('Message sent.');
   })
-  .catch((reason) => {
+  .catch(error => {
   	console.log('An error occurred.');
-    console.log(reason.stack);
+    console.log(error.stack);
   });
 ```
 
@@ -70,20 +70,20 @@ on successful delivery of emergency priority messages.
 
 ```js
 let priority = new chump.Priority('emergency', {
-  'retry':    300,  // Optional: Notify user every 5 minutes (300 seconds) until acknowledged
-  'expire':   3600, // Optional: Expire the message in 1 hour (3600 seconds)
-  'callback': 'http://example.org' // Optional: Callback URL
+  retry:    300,  // Optional: Notify user every 5 minutes (300 seconds) until acknowledged
+  expire:   3600, // Optional: Expire the message in 1 hour (3600 seconds)
+  callback: 'http://example.org' // Optional: Callback URL
 });
 
 let message = new chump.Message({
-  'title':    'Example emergency',
-  'message':  'Super important message',
-  'user':     user,
-  'priority': priority
+  title:    'Example emergency',
+  message:  'Super important message',
+  user:     user,
+  priority: priority
 });
 
 client.sendMessage(message)
-  .then((receipt) => {
+  .then(receipt => {
     console.log(`Message sent. Receipt is ${receipt}`);
   });
 ```
@@ -107,9 +107,9 @@ client.verifyUser(user)
   .then(() => {
     console.log('User exists.');
   })
-  .catch((reason) => {
+  .catch(error => {
     console.log('User may not exist.');
-    console.log(reason.stack);
+    console.log(error.stack);
   });
 ```
 
@@ -120,7 +120,7 @@ only returned for messages sent with an emergency priority.
 
 ```js
 client.getReceipt(receipt)
-  .then((receipt) => {
+  .then(receipt => {
     console.log(`Receipt: ${receipt.id}`);
     console.log(`Acknowledged: ${receipt.isAcknowledged}`);
     console.log(`Acknowledged by: ${receipt.acknowledgedBy}`);
@@ -150,7 +150,7 @@ Chump to retrieve information for the group from Pushover.net.
 let group = new chump.Group(groupId);
 
 client.getGroupDetails(group)
-  .then((group) => {
+  .then(group => {
     console.log(`Group name: ${group.name}`);
 
     for (let user of group.users) {
