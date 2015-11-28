@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.rawgit.com/sqmk/chump/eceac9d76c10936bb191afc87da6b7230ced0c2d/media/logo.png" alt="Chump" />
+  <img src="https://cdn.rawgit.com/sqmk/chump/5c292306a220791bcd17d70eeb3f9b4d04e2bb51/media/logo.svg" alt="Chump" />
 </p>
 
 # Chump - Pushover.net client for Node.js
