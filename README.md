@@ -235,6 +235,10 @@ let appReset = client.appReset;
 Want to see more examples? View them in the [examples](examples) directory included
 in this repository.
 
+## Logo
+
+Chump's initial logo was designed by scorpion6 on Fiverr. Font used is Lato Bold.
+
 ## License
 
 This software is licensed under the MIT License. [View the license](LICENSE).
