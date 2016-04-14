@@ -21,4 +21,7 @@ console.log('Sending message...');
 client.sendMessage(message)
   .then(() => {
     console.log('Message sent!');
+  })
+  .catch(e => {
+    console.log(e);
   });
