@@ -24,14 +24,14 @@
     "test": "mocha"
   },
   "dependencies": {
-    "lodash":  "3.10.0",
-    "request": "2.61.0"
+    "lodash":  "4.11.0",
+    "request": "2.71.0"
   },
   "devDependencies": {
-    "mocha":            "2.3.2",
-    "chai":             "3.2.0",
-    "chai-as-promised": "5.1.0",
-    "sinon":            "1.17.0",
-    "mockery":          "1.4.0"
+    "mocha":            "2.4.5",
+    "chai":             "3.5.0",
+    "chai-as-promised": "5.3.0",
+    "sinon":            "1.17.3",
+    "mockery":          "1.6.2"
   }
 }
