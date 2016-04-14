@@ -4,8 +4,9 @@
 
 # Chump - Pushover.net client for Node.js
 
-[![NPM Version](https://badge.fury.io/js/chump.svg)](https://www.npmjs.com/package/chump)
-[![Build Status](https://api.travis-ci.org/sqmk/chump.svg?branch=master)](https://travis-ci.org/sqmk/chump)
+[![NPM Version](https://img.shields.io/npm/v/chump.svg?style=flat-square)](https://www.npmjs.com/package/chump)
+[![Build Status](https://img.shields.io/travis/sqmk/chump/master.svg?style=flat-square)](https://travis-ci.org/sqmk/chump)
+[![Dependency Status](https://img.shields.io/david/sqmk/chump.svg?style=flat-square)](https://david-dm.org/sqmk/chump)
 
 Chump is a client for the popular [Pushover.net](https://pushover.net) real-time
 notification service.
