@@ -1,6 +1,6 @@
 {
   "name": "chump",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Pushover.net client for Node.js",
   "keywords": [
     "pushover",
@@ -24,14 +24,14 @@
     "test": "mocha"
   },
   "dependencies": {
-    "lodash":  "4.11.0",
-    "request": "2.71.0"
+    "lodash":  "4.17.4",
+    "request": "2.81.0"
   },
   "devDependencies": {
-    "mocha":            "2.4.5",
+    "mocha":            "3.4.2",
     "chai":             "3.5.0",
-    "chai-as-promised": "5.3.0",
-    "sinon":            "1.17.3",
-    "mockery":          "1.6.2"
+    "chai-as-promised": "6.0.0",
+    "sinon":            "2.3.2",
+    "mockery":          "2.0.0"
   }
 }

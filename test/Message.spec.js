@@ -5,6 +5,7 @@ let Message  = require('../lib/Message');
 let Priority = require('../lib/Priority');
 let Sound    = require('../lib/Sound');
 let User     = require('../lib/User');
+let Group    = require('../lib/Group');
 let _        = require('lodash');
 
 describe('Message', () => {
@@ -67,6 +68,13 @@ describe('Message', () => {
       this.message.user = user;
 
       expect(this.message.user).to.equal(user);
+    });
+
+    it('should set group', () => {
+      let group         = new Group('123456789012345678901234567890');
+      this.message.user = group;
+
+      expect(this.message.user).to.equal(group);
     });
 
     it('should throw exception on invalid value', () => {
